@@ -4,6 +4,8 @@ import argparse
 def add(a, b):
     return a + b
 
+def multiply(a, b):
+    return a * b
 
 def main():
     parser = argparse.ArgumentParser(description="A simple calculator")
@@ -33,6 +35,18 @@ def main():
         result = add(args.a, args.b)
     elif args.operation == "subtract":
         result = subtract(args.a, args.b)
+    elif args.operation == "multiply":
+        result = multiply(args.a, args.b)
+
+    parser.add_argument(
+    "--operation", "-op",
+    choices=["add", "subtract", "multiply"],
+    default="add",
+    help="Operation to perform")
+
+    
+
+
     
 
 
