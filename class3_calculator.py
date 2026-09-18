@@ -22,6 +22,24 @@ def main():
 
     print(f"Result: {result}")
 
+    parser.add_argument(
+            "--operation", "-op",
+            choices=["add", "subtract"],
+            default="add",
+            help="Operation to perform"
+        )
+    
+    if args.operation == "add":
+        result = add(args.a, args.b)
+    elif args.operation == "subtract":
+        result = subtract(args.a, args.b)
+    
+
 
 if __name__ == "__main__":
     main()
+
+def subtract(a, b):
+    return a - b
+
+    
